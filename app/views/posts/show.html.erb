@@ -1,0 +1,11 @@
+<h1>여기는 쇼룸임니다.</h1>
+
+
+<%= @post.title %> <hr>
+<%= @post.content %>
+<hr>
+<img src="<%=@post.image_url%>">
+<hr>
+<a href="/">메인페이지로가기</a>
+<%= link_to '수정하러가기', edit_post_path %>
+<%= link_to '삭제하기', post_path, method: :delete, data: {confirm: "진짜?"}%>
