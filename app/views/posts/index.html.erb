@@ -22,6 +22,8 @@
      
       <% @posts.each do |p|%>
       <article class="white-panel">
+      <h4><%= p.user.username %></h4>
+
       <img src="<%=p.image_url%>" alt="">
       <h4><a href="/posts/<%=p.id%>"><%=p.title%></a></h4>
       <p><%=p.content%></p>
