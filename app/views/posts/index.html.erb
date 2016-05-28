@@ -1,8 +1,15 @@
 <div class="container">
   <div class="row">
-    <div align="center", color="red"><h2>AFTER SQUART</h2></div>
+    <div align="center", color="red"><h2>AFTER SQUAT</h2></div>
 
-    <p align="right">나의 프로필 <a href="#" target="_blank">'go'</a>
+    <p align="right">나의 프로필 
+    
+    <% if user_signed_in?%>
+    <a href="/users/<%=current_user.id%>" target="_blank">'go'</a>
+    <%else%>
+    <a href="#">프로필에가려면 로긴하세용</a>
+    <%end%>
+    
     </p>
     <hr>
     <section id="pinBoot">
