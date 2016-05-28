@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 
-
+gem 'jquery_mobile_rails'
 gem 'devise'
 
 
