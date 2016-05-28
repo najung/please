@@ -1,47 +1,79 @@
+<<<<<<< HEAD
 <div class="container">
   <div class="row">
     <div align="center", color="red"><h2>AFTER SQUAT</h2></div>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>After-Squat</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+>>>>>>> 10ffd4fa73ddf3b2861b24c00e4b77a473fadcac
 
-    <p align="right">나의 프로필 <a href="#" target="_blank">'go'</a>
-    </p>
-    <hr>
+        <script type="text/javascript">
+        $(function(){
+            $("#goChangPage2Btn").bind("click",function(){
+                //alert("005changePage2.html 페이지로 이동합니다." );
+                $.mobile.changePage( "005changePage2.html", {transition: "flip", changeHash: false });
+            });
+            
+            $("#backBtn").bind("click",function(){
+                $.mobile.changePage( "#page1", { transition: "flip", changeHash: false });
+            });
+        });
+        </script>
+
+</head>
+
+<body>
+<%# 헤더 %>
+
+  <section id="page1" data-role="page">
+    <header data-role="header" align="middle"><h1>AFTER SQUAT</h1></header>  
+
+
+<%# 콘텐츠 %>
+ 
+   <div data-role="main" class="ui-content">
+    <div data-role="controlgroup" data-type="horizontal">
+      <a href="#" class="ui-btn">나의 프로필</a>
+      <a href="https://aftersquart-najung.c9users.io/posts/new" class="ui-btn">글쓰러가기</a>
+    </div>
+    
     <section id="pinBoot">
 
       <article class="white-panel"><img src="http://cfile6.uf.tistory.com/image/0133944D51EAB53F252922" alt="">
         <h4><a href="#">공지</a></h4>
-        <p>
-게으름에 대한 하늘의 보복은 두 가지가 있다. 하나는 자신의 실패요, 하나는 그가 하지 않은 일을 한 옆 사람의 성공이다.      - 르나르</p>
+        <p>게으름에 대한 하늘의 보복은 두 가지가 있다. 하나는 자신의 실패요, 하나는 그가 하지 않은 일을 한 옆 사람의 성공이다.      - 르나르</p>
       </article>
       
 
      
       <% @posts.each do |p|%>
       <article class="white-panel">
-      <h4><%= p.user.username %></h4>
-
       <img src="<%=p.image_url%>" alt="">
       <h4><a href="/posts/<%=p.id%>"><%=p.title%></a></h4>
       <p><%=p.content%></p>
       </article>
       <%end%>
-      
-
-    </section>
-
-      <div align="right">  <%= link_to '글쓰러가기', new_post_path%> </div>
-    <hr>
-
-
-  </div>
-  <p>
-    <a href="https://www.facebook.com/profile.php?id=100010297664628" target="_blank"><small>contact me</small><sup>☆</sup></a>
-    <br>
-    <br>
-
-  </p>
+      </section>
+      </div><br>
+    
+    
+    <%# 푸터 %>
+ <div data-role="footer" align="center">
+   <a href="https://www.facebook.com/profile.php?id=100010297664628" target="_blank"><small>contact me</small><sup>☆</sup></a>
+     </div>
 </div>
 
 
+</div> 
 
 
+</body>
+</html>
 
