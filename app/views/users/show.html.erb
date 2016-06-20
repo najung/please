@@ -1,7 +1,74 @@
-<h1><%= @user.username %>의 헬스룸입니다 </h1>
-<Br><br><hr>
 
-<% @user_posts.each do |post| %>
-    <%= link_to post.title, post_path(post) %>
+<div data-role="page" id="page_profile">
+       <div data-role="header" data-fullscreen="true" >
+           <h1 class="logo" style="font-size:15px; font-weight:600;">AfterSquat</h1>
+       </div> 
+     
+     
+     
+     
+     
+       <div id="banner" data-role="content">
+         <div class="row">
+           <div class="col-xs-4" align="center"><img id="before_profile" src="../bono.jpg">  
+           </div>
+           <div class="col-xs-2" style="padding-left:1px;" align="center">
+                <div id="count_profile">게시물<br>팔로우<br>팔로워</div>
+           </div>   
+           <div class="col-xs-2" style="padding-left:1px;" align="center">
+                <div id="count_profile_answer"><%=@user_posts.count%><br>345<br>87</div>
+           </div>
+           <div class="col-xs-4" align="center"><img id="after_profile" src="../bono2.jpg"></div>
+         </div>
+       </div>
 
-<% end %>
+           
+       <div id="banner2" data-role="content">
+              <div id="id" ><%= @user.username%></div>
+              
+              <div id="introduce">안녕하세요 저는 <%= @user.username%>입니다. 
+                                   <br>제 롤모델은 <%= @user.boll_model%>입니다!
+              </div>
+              
+              <a href="#">&nbsp;&nbsp;facebook</a>
+       </div>
+           
+           
+           
+  <div data-role="main" id="pic_box">
+       <% @user_posts.each do |p| %>
+    <div id='content_pic'>
+    
+      <!-- 클릭을하기위해 아래놈을 썻음 <img class="item thumbnail" src="<%=p.image_url%>" alt=""> -->
+       <a href="/posts/<%=p.id%>"><input class="item thumbnail" type="image" src="<%=p.image_url%>" alt="{alternate text}" /></a>
+    </div>
+    <%end%>
+ </div>
+           
+           
+           
+           
+           
+       
+       
+       
+       <div data-role="footer"  data-position="fixed"  >
+        <div data-role="navbar">
+            <ul>
+               <li><a href="/" data-icon="home"></a></li>
+               <li><a href="#" data-icon="camera"></a></li>
+               <li><a href="/posts/new" data-icon="edit"></a></li>
+               <li>
+                   <% if user_signed_in?%>
+                   <a href="/users/sign_out" data-icon="delete"></a>
+                   <% else %>       
+                   <a href="users/sign_in" data-icon="check"></a>
+                   <%end%>
+               </li>
+           
+           </ul>
+        </div>
+       </div> 
+       
+</div>
+

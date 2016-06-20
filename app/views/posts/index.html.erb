@@ -1,49 +1,56 @@
-<div class="container">
-  <div class="row">
-    <div align="center", color="red"><h2>AFTER SQUAT</h2></div>
+<div data-role="page" id="page_main">
+       <div data-role="header">
+           <h1 class="logo" style="font-size:15px; font-weight:600;">AfterSquat</h1>
+            
+       </div> 
+       
+       
+    <div  data-role="content" id="pic_box">
+        <div class="masonry">
+            <% @posts.each do |p|%>
+                  <a href="/posts/<%=p.id%>"><input class="item" type="image" src="<%=p.image_url%>" alt="{alternate text}" /></a>
 
-    <p align="right">나의 프로필 
-    
-    <% if user_signed_in?%>
-    <a href="/users/<%=current_user.id%>" target="_blank">'go'</a>
-    <%else%>
-    <a href="#">프로필에가려면 로긴하세용</a>
-    <%end%>
-    
-    </p>
-    <hr>
-    <section id="pinBoot">
+            <% end %>
+        </div>
+    </div>
 
-      <article class="white-panel"><img src="http://cfile6.uf.tistory.com/image/0133944D51EAB53F252922" alt="">
-        <h4><a href="#">공지</a></h4>
-        <p>
-게으름에 대한 하늘의 보복은 두 가지가 있다. 하나는 자신의 실패요, 하나는 그가 하지 않은 일을 한 옆 사람의 성공이다.      - 르나르</p>
-      </article>
-      
-
-     
-      <% @posts.each do |p|%>
-      <article class="white-panel">
-      <h4><%= p.user.username %></h4>
-
-      <img src="<%=p.image_url%>" alt="">
-      <h4><a href="/posts/<%=p.id%>"><%=p.title%></a></h4>
-      <p><%=p.content%></p>
-      </article>
-      <%end%>
-      
-
-    </section>
-
-      <div align="right">  <%= link_to '글쓰러가기', new_post_path%> </div>
-    <hr>
+          
+          
+    <div data-role="footer" data-position="fixed" data-fullscreen="true">
+      <div data-role="navbar">
+        <ul>
+           <li>
+            <% if user_signed_in?%>
+            <a href="/users/<%=current_user.id%>" data-icon="user"></a>
+            <%else%>
+            <a href="/users/sign_in" data-icon="user"></a>
+            <%end%>
+            </li>
+           <li><a href="/users/show" data-icon="camera"></a></li>
+           <li>
+            <% if user_signed_in?%>
+              <a href="/posts/new" data-icon="edit"></a>
+            <%else%>
+            <a href="/users/sign_in" data-icon="check"></a>
+            <%end%>
+            </li>
+       </ul>
+      </div>
+    </div> 
+       
+</div>
 
 
-  </div>
-  <p>
-    <a href="https://www.facebook.com/profile.php?id=100010297664628" target="_blank"><small>contact me</small><sup>☆</sup></a>
-    <br>
-    <br>
 
-  </p>
+
+<!-- 쇼룸이 이곳에 들어갈것이다@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+
+<div data-role="page" id="page_sub">
+ 
+        
+    <div  data-role="content">
+    </div>
+
+
 </div>

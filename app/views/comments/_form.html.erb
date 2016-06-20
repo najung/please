@@ -1,0 +1,9 @@
+<%= form_for ([@post, @post.comments.build]) do |f| %>
+<p>
+    <%= f.label :내용 %>
+    <%= f.text_field :content%>
+</p>
+    <%= f.submit %>
+
+
+<%end%>

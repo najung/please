@@ -1,2 +1,37 @@
-<h1>몸을기록하세요</h1>
-<%= render 'form' %>
+
+
+
+<div data-role="page" id="page_main">
+       <div data-role="header">
+           <h1 class="logo" style="font-size:15px; font-weight:600;">AfterSquat</h1>
+       </div> 
+       
+       
+       
+    <div  data-role="content">
+        <%= form_for @post, :html => {:multipart => true, "data-ajax" => false}  do |f| %>
+          <%= f.label :title %>
+          <%= f.text_field :title %><br />
+        
+          <%= f.label :content %>
+          <%= f.text_field :content %><br />
+        
+          <div class="form-group">
+             <input style="background-color : transparent;" type="file" name="pic" accept="image/*" >
+          </div>
+          <%= f.submit %>
+        <% end %>
+    </div>
+          
+          
+    <div data-role="footer" data-position="fixed" data-fullscreen="true">
+      <div data-role="navbar">
+        <ul>
+           <li><a href="/"  data-icon="back"></a></li>
+       </ul>
+      </div>
+    </div> 
+       
+</div>
+
+    

@@ -1,0 +1,146 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require jquery.mobile
+ */
+ 
+ 
+
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@모바일
+
+
+
+
+// 로고,폰트꾸미는부분@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+#main {font-size:15px}
+.logo {font-family: 'Poiret One', cursive;}
+#id  {font-family: 'Cabin', sans-serif;}
+#introduce {font-family: 'Josefin Sans', sans-serif;}
+
+
+
+//색션단위@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#banner {margin-top: 20px;}
+#banner2 {margin: 10px 10px;}
+
+
+
+
+
+//프로필부분@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#before_profile {  width:80px; height:80px;
+                  -webkit-border-radius: 50px;
+                  -moz-border-radius: 50px;
+                  border-radius: 50px;
+                  border-top-left-radius: 50px !important;
+                  border-bottom-left-radius: 50px !important;
+}
+
+#after_profile {  width:80px; height:80px;
+                  -webkit-border-radius: 50px;
+                  -moz-border-radius: 50px;
+                  border-radius: 50px;
+                  border-top-left-radius: 50px !important;
+                  border-bottom-left-radius: 50px !important;
+                  margin-right:15px
+}
+
+
+
+
+
+.col-xs-2 {
+    #count_profile { 
+                    font-size: 12px; 
+                    margin: 15px auto;
+                    color: rgba(0, 0, 0, 0.3);
+                   }
+    #count_profile_answer{ 
+                    font-size: 13px; 
+                    margin: 13px auto;
+                    color: rgba(0, 0, 0, 0.6);
+                         }
+                        
+}
+//@@@@@@@@@@@@@@@ID와 자기소개@@@@@@@@@@@@@@@@@@@@@@@@@
+#id {
+    color: rgba(0, 0, 0, 0.8);
+    margin: 8px;
+}
+#introduce{
+          font-size: 10px;
+          margin: 0px 20px 3px 20px;
+}
+
+
+
+
+
+
+//핀터 블락@@@@@@@@@@@@@@@@@@@@@ 
+#pic_box{ padding:5px;}
+
+
+
+
+      .item.thumbnail {
+        width:  33%;
+        height: 130px;
+        float: left;
+        padding: 0px;
+        margin-bottom: 2px;
+        background: #cfcfcf
+      }
+
+
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@섭페이지
+
+
+
+input.item {
+    
+    display: inline-block;
+    background: #fff;
+    padding: 0em;
+    margin: 0.2em 0em 0.4em;
+    width: 105%;
+    box-shadow: 0.2px 0.2px 0px 0 #ccc;
+    border-radius: 8px;
+    
+}
+
+@media only screen and (max-width: 800px) {
+    .masonry {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .masonry {
+        -moz-column-count: 4;
+        -webkit-column-count: 4;
+        column-count: 4;
+    }
+}
+
+
+
+//@@@@@@@@@@@@쇼룸@@@@@@@@@@@@@@@@@@@@@
+
+.show {height :80%; width :80%;}
+
+
