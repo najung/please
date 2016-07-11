@@ -1,44 +1,48 @@
-
-<div data-role="page" id="page_main">
        <div data-role="header">
-           <h1 class="logo" style="font-size:15px; font-weight:600;">AfterSquat</h1>
+           <h1 class="logo" style="font-size:15px; font-weight:600;">
+               <a href="/"style="color:black; text-decoration:none;">AfterSquat</a>
+           </h1>
        </div> 
        
        
        
     <div  data-role="content">
             
-            <a href="/users/<%=@post.user.id%>"><h4><%= @post.user.username %></h4><br></a>
+            <a href="/<%=@post.user.username%>"><h4><%= @post.user.username %></h4><br></a>
             
             <img class="show" src="<%=@post.image_url%>">
             <%= @post.title %> <hr>
             <%= @post.content %>
             <hr>
             <!--                    댓글                       -->
-            <div id="comments">
+            
               <h3><%= @post.comments.count %> Comments</h3>
-          
-          
-          <%= render @post.comments %><hr>
-           
+      
+         <% if @post.comments %>
+          <% @post.comments.each do |comment| %>
+         <div class="comment">
+                <%= comment.user.username %>: <%= comment.content %>
               
-              <h3>댓글쓰깅</h3>
-              <% if user_signed_in?%>
-              <%= render "comments/form" %>
-              <%else%>
-              <a href="/users/sign_in"><h5>로그인을 먼저하세용!</h5></a>
-              <%end%>
-            </div>
-            
-            <hr>
-            <hr>
-            
+              <% if comment.user == current_user %>
+                <%= link_to post_comment_path(@post, comment), method: :delete, data: { confirm: "진짜?" } do %>
+                <span>x</span>
+              <% end %>
+            <% end%>
+          <% end %>
+        <% end %>
+
+          <%= form_for [@post, @post.comments.new] do |f| %>
+            <%= f.text_field :content, placeholder: 'Add a comment...' %>
+          <% end %>
+        </div>  
+        
+          <!--           -->
+
                 <% if @post.user == current_user %>
                 <%= link_to '수정하러가기', edit_post_path %>
                 <%= link_to '삭제하기', post_path, method: :delete, data: {confirm: "진짜?"}%>
                 <%end%>
             
-    </div>
           
           
     <div data-role="footer" data-position="fixed">
@@ -49,6 +53,5 @@
       </div>
     </div> 
        
-</div>
 
     

@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 
+//= require turbolinks
 //= require jquery.mobile
 
 
@@ -193,3 +194,35 @@ http://www.jqueryscript.net/layout/Simple-jQuery-Plugin-To-Create-Pinterest-Styl
     }
 
 })(jQuery, window, document);
+
+
+
+
+$(function() {
+if ($.fn.reflect) {
+$('#demo-coverflow .cover').reflect();// only possible in very specific situations
+}
+
+$('#demo-coverflow').coverflow({
+index:6,
+density:2,
+animateStep:function(event, cover, offset, isVisible, isMiddle, sin, cos) {
+if (isVisible) {
+if (isMiddle) {
+$(cover).css({
+'filter':'none',
+'-webkit-filter':'none'
+});
+} else {
+var brightness= 1 + Math.abs(sin),
+contrast= 1 - Math.abs(sin),
+filter= 'contrast('+contrast+') brightness('+brightness+')';
+$(cover).css({
+'filter':filter,
+'-webkit-filter':filter
+});
+}
+}
+}
+});
+});

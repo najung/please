@@ -1,18 +1,18 @@
-<div data-role="page" id="page_main">
-       <div data-role="header">
-           <h1 class="logo" style="font-size:15px; font-weight:600;">AfterSquat</h1>
-            
-       </div> 
+<div data-role="header">
+   <h1 class="logo" style="font-size:15px; font-weight:600;">
+       <a href="/"style="color:black; text-decoration:none;">AfterSquat</a>
+   </h1>
+</div> 
        
        
-    <div  data-role="content" id="pic_box">
-        <div class="masonry">
-            <% @posts.each do |p|%>
-                  <a href="/posts/<%=p.id%>"><input class="item" type="image" src="<%=p.image_url%>" alt="{alternate text}" /></a>
+<div  data-role="content" id="pic_box">
+    <div class="masonry">
+        <% @posts.each do |p|%>
+            <a href="/posts/<%=p.id%>"><input class="item" type="image" src="<%=p.image_url%>" alt="{alternate text}" /></a>
 
-            <% end %>
-        </div>
+        <% end %>
     </div>
+</div>
 
           
           
@@ -21,7 +21,7 @@
         <ul>
            <li>
             <% if user_signed_in?%>
-            <a href="/users/<%=current_user.id%>" data-icon="user"></a>
+            <a href="/<%=current_user.username%>" data-icon="user"></a>
             <%else%>
             <a href="/users/sign_in" data-icon="user"></a>
             <%end%>
@@ -53,4 +53,3 @@
     </div>
 
 
-</div>

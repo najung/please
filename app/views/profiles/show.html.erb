@@ -7,18 +7,19 @@
        
        
     <div  data-role="content">
-        <%= form_for @post, :html => {:multipart => true, "data-ajax" => false}  do |f| %>
-          <%= f.label :title %>
-          <%= f.text_field :title %><br />
-        
-          <%= f.label :content %>
-          <%= f.text_field :content %><br />
-        
-          <div class="form-group">
-             <input style="background-color : transparent;" type="file" name="pic" accept="image/*" >
-          </div>
-          <%= f.submit %>
-        <% end %>
+
+        <div id="demo-coverflow">
+<img class="cover" src="assets/1.jpg"/>
+<img class="cover" src="assets/2.jpg"/>
+<img class="cover" src="assets/3.jpg"/>
+<img class="cover" src="assets/4.jpg"/>
+<img class="cover" src="assets/5.jpg"/>
+<img class="cover" src="assets/6.jpg"/>
+
+</div>
+
+
+
     </div>
           
           
@@ -30,5 +31,3 @@
       </div>
     </div> 
        
-
-    

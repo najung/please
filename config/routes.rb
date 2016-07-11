@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
   
+  
+  
+  get ':username', to: 'profiles#show', as: :profile  
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'posts#index'
   devise_for :users
   resources :posts do
     resources :comments
   end
-  resources :users
+  resources :profiles
+
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
