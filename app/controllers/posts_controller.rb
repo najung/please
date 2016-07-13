@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   def index
    
     @posts = Post.all.reverse
+    @post = params[:image_url]
   end
   
     def new

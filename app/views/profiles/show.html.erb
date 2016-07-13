@@ -1,33 +1,33 @@
-       <div data-role="header">
-           <h1 class="logo" style="font-size:15px; font-weight:600;">
-               <a href="/"style="color:black; text-decoration:none;">AfterSquat</a>
-           </h1>
-       </div> 
+<div data-role="header">
+    <h1 class="logo" style="font-size:15px; font-weight:600;">
+    <a href="/" style="color:black; text-decoration:none;">AfterSquat</a>
+    </h1>
+    <!--scripts폴더안에있는3개. 돈주고산거임-->
+    <script src="/assets/scripts/jquery-2.1.4.min.js"></script>
+    <script src="/assets/scripts/theta-carousel.min.js"></script>
+    <script src="/assets/scripts/example.js"></script>
+    
+</div> 
        
        
        
-    <div  data-role="content">
-
-        <div id="demo-coverflow">
-<img class="cover" src="assets/1.jpg"/>
-<img class="cover" src="assets/2.jpg"/>
-<img class="cover" src="assets/3.jpg"/>
-<img class="cover" src="assets/4.jpg"/>
-<img class="cover" src="assets/5.jpg"/>
-<img class="cover" src="assets/6.jpg"/>
+<div  data-role="content"  id="container">
+        <style>
+        img {vertical-align: middle; width:100%; height:100%;}
+        </style>
+        <% @posts.each do |p|%>
+        <div class="ex-item">
+            <img src="<%=p.image_url%>" alt="{alternate text}">
+        </div>
+        <%end%>
 
 </div>
-
-
-
-    </div>
           
-          
-    <div data-role="footer" data-position="fixed" data-fullscreen="true">
-      <div data-role="navbar">
+<div data-role="footer" data-position="fixed" data-fullscreen="true">
+    <div data-role="navbar">
         <ul>
-           <li><a href="/"  data-icon="back"></a></li>
-       </ul>
-      </div>
-    </div> 
+            <li><a href="/"  data-icon="back"></a></li>
+        </ul>
+    </div>
+</div> 
        

@@ -10,13 +10,11 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require_tree .
  *= require jquery.mobile
  */
  
- 
-
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@모바일
 
 
@@ -144,3 +142,22 @@ input.item {
 .show {height :80%; width :80%;}
 
 
+//@@@@@@@@@@@@@@유저 돈주고산 코드@@@@@@@
+img {vertical-align: middle;}
+
+#container {
+    top: 0px; 
+    bottom: 0px; 
+    position: absolute; 
+    right: 0px; 
+    left: 0px;
+            }
+.ex-item {
+        height: 282px;
+        width: 214px;
+        display: none;
+        border: 0px solid white;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        }

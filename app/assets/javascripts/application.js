@@ -19,7 +19,6 @@
 
 
 
-
 $(document).ready(function() {
 $('#pinBoot').pinterest_grid({
 no_columns: 4,
@@ -226,3 +225,5 @@ $(cover).css({
 }
 });
 });
+
+

@@ -8,9 +8,30 @@
 <div  data-role="content" id="pic_box">
     <div class="masonry">
         <% @posts.each do |p|%>
-            <a href="/posts/<%=p.id%>"><input class="item" type="image" src="<%=p.image_url%>" alt="{alternate text}" /></a>
-
+            <a href="#popupExample" id="open_popup"  data-inline="true" data-rel="popup" data-transition="pop" data-position-to="window">
+            <input class="item" type="image" src="<%=p.image_url%>" alt="{alternate text}" />
+            </a>
         <% end %>
+    <div data-role="popup" id="popupExample">
+        <div data-role="header"class="ui-content">
+            <p>
+                PopUp
+            </p>
+        </div>
+
+        <div data-role="content">
+                        
+            <img src="<%=@post%>" alt="{alternate text}" />
+                       <p> 여기에 사진이 나와야하는데 ㅜㅜ 제발 ㅜ</p>
+
+        </div>
+
+        <div data-role="footer" class="ui-content">
+            <a href="#foo" data-role="button" data-theme="c" data-inline="true"> Cancel </a>
+        </div>
+    </div>
+
+        
     </div>
 </div>
 
@@ -39,17 +60,5 @@
     </div> 
        
 </div>
-
-
-
-
-<!-- 쇼룸이 이곳에 들어갈것이다@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-
-
-<div data-role="page" id="page_sub">
- 
-        
-    <div  data-role="content">
-    </div>
 
 
