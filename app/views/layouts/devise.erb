@@ -19,9 +19,10 @@
   
   <link rel="stylesheet" href="font-awesome.min.css" type="text/css">
 </head>
-<body style="background-image:url(<%= asset_path 'bg.jpg' %>);background-repeat: no-repeat; background-size:100%">
+<body style="background-image:url(<%= asset_path '#.jpg' %>);background-repeat: no-repeat; background-size:100%">
     
-
+<div style="position:relative; top:40px;">
 <%=yield%>
+</div>
 </body>
 </html>

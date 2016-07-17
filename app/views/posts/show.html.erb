@@ -1,57 +1,64 @@
-       <div data-role="header">
-           <h1 class="logo" style="font-size:15px; font-weight:600;">
-               <a href="/"style="color:black; text-decoration:none;">AfterSquat</a>
-           </h1>
-       </div> 
-       
-       
-       
-    <div  data-role="content">
-            
-            <a href="/<%=@post.user.username%>"><h4><%= @post.user.username %></h4><br></a>
-            
-            <img class="show" src="<%=@post.image_url%>">
-            <%= @post.title %> <hr>
-            <%= @post.content %>
-            <hr>
-            <!--                    댓글                       -->
-            
-              <h3><%= @post.comments.count %> Comments</h3>
-      
-         <% if @post.comments %>
-          <% @post.comments.each do |comment| %>
-         <div class="comment">
-                <%= comment.user.username %>: <%= comment.content %>
-              
+  <div style="text-align:right;">
+      <% if user_signed_in? %>
+      <a style="color:black" href="/users/sign_out">log out</a>
+      <%else%>
+      <a style="color:black" href="/users/sign_in">log in</a>
+      <%end%>
+  </div>
+  
+<div align="center" style="margin-bottom:20px;">
+   <h1 class="logo" style="font-size:25px; font-weight:600;">
+       <a href="/" style="color:black; text-decoration:none;">AfterSquat</a>
+   </h1>
+</div>  
+
+
+
+<div style="position: relative; left:40px">
+
+
+<div>
+    <a style="color:black" href="/<%=@post.user.username%>">
+      <h4><%= @post.user.username %></h4>
+    </a>        
+    <img class="show"src="<%=@post.image_url%>">
+    <%= @post.content %>
+</div>        
+
+        <hr> 
+            <!--                    댓글                       -->    
+<div>
+  <%=time_ago_in_words(@post.created_at)%> ago
+    <h4><%= @post.comments.count %> Comments</h4>  
+          <% if @post.comments %>
+            <% @post.comments.each do |comment| %>
+              <div class="comment">
+              <a style="color:black" href="/<%=comment.user.username%>"><%= comment.user.username %></a>: <%= comment.content %>  
               <% if comment.user == current_user %>
-                <%= link_to post_comment_path(@post, comment), method: :delete, data: { confirm: "진짜?" } do %>
-                <span>x</span>
+                  <%= link_to post_comment_path(@post, comment), method: :delete, data: { confirm: "정말 삭제하시겠습니까??" } do %>
+                  <span>x</span>
               <% end %>
             <% end%>
           <% end %>
         <% end %>
-
-          <%= form_for [@post, @post.comments.new] do |f| %>
-            <%= f.text_field :content, placeholder: 'Add a comment...' %>
-          <% end %>
-        </div>  
-        
-          <!--           -->
-
-                <% if @post.user == current_user %>
-                <%= link_to '수정하러가기', edit_post_path %>
-                <%= link_to '삭제하기', post_path, method: :delete, data: {confirm: "진짜?"}%>
-                <%end%>
-    </div>        
-          
-          
-    <div data-role="footer" data-position="fixed">
-      <div data-role="navbar">
-        <ul>
-           <li><a href="/"  data-icon="back"></a></li>
-       </ul>
-      </div>
-    </div> 
-       
-
-    
+</div>
+<div>
+    <%= form_for [@post, @post.comments.new] do |f| %>
+      <% if user_signed_in? %>
+        <%= f.text_field :content, placeholder: 'Add Comments...' %>
+      <%else%>
+        <a href="/users/sign_in">댓글을 쓰려면 로그인하세요</a>
+      <%end%>
+      <%= f.submit %>
+    <% end %>
+</div>       
+</div>
+<br>
+<div style="text-align:right; position:relative; right:50px;">        
+  <% if @post.user == current_user %>
+  <%= link_to 'Edit', edit_post_path %>
+  <%= link_to 'Delete', post_path, method: :delete, data: {confirm: "진짜?"}%>
+  <%end%>
+</div>
+<br>
+<br>

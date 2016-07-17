@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   
   
   get ':username', to: 'profiles#show', as: :profile  
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'posts#index'
   devise_for :users
+  mount RailsAdmin::Engine => '/admin/najung', as: 'rails_admin'
   resources :posts do
     resources :comments
   end

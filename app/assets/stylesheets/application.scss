@@ -12,18 +12,14 @@
  *
  *= require_self
  *= require_tree .
- *= require jquery.mobile
  */
  
-//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@모바일
-
-
 
 
 // 로고,폰트꾸미는부분@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 #main {font-size:15px}
-.logo {font-family: 'Poiret One', cursive;}
+.logo {font-family: 'Poiret One', cursive; margin-top: 2px;}
 #id  {font-family: 'Cabin', sans-serif;}
 #introduce {font-family: 'Josefin Sans', sans-serif;}
 
@@ -105,17 +101,18 @@
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@섭페이지
 
-
+.masonry { width:96%;
+        }
 
 input.item {
-    
+  
     display: inline-block;
     background: #fff;
     padding: 0em;
-    margin: 0.2em 0em 0.4em;
+    margin: 0.2em 0.2em 0.4em;
     width: 105%;
     box-shadow: 0.2px 0.2px 0px 0 #ccc;
-    border-radius: 8px;
+    border-radius: 10px;
     
 }
 
@@ -137,15 +134,24 @@ input.item {
 
 
 
+
+
 //@@@@@@@@@@@@쇼룸@@@@@@@@@@@@@@@@@@@@@
 
-.show {height :80%; width :80%;}
+.show {height :80%;
+        width :80%;
+       
+        
+        border-radius: 10px;
+        }
 
 
 //@@@@@@@@@@@@@@유저 돈주고산 코드@@@@@@@
-img {vertical-align: middle;}
+#money {vertical-align: middle;}
+
 
 #container {
+    margin-top: 40px;
     top: 0px; 
     bottom: 0px; 
     position: absolute; 
@@ -156,8 +162,5 @@ img {vertical-align: middle;}
         height: 282px;
         width: 214px;
         display: none;
-        border: 0px solid white;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
         box-sizing: border-box;
         }

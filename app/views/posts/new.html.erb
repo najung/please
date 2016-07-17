@@ -1,34 +1,33 @@
-       <div data-role="header">
-           <h1 class="logo" style="font-size:15px; font-weight:600;">
-               <a href="/"style="color:black; text-decoration:none;">AfterSquat</a>
-           </h1>
-       </div> 
+  <div style="text-align:right;">
+      <% if user_signed_in? %>
+      <a style="color:black" href="/users/sign_out">log out</a>
+      <%else%>
+      <a style="color:black" href="/users/sign_in">log in</a>
+      <%end%>
+  </div>
+  
+<div align="center" style="margin-bottom:20px;">
+   <h1 class="logo" style="font-size:25px; font-weight:600;">
+       <a href="/" style="color:black; text-decoration:none;">AfterSquat</a>
+   </h1>
+</div>  
        
        
        
-    <div  data-role="content">
+    <div align="center" style="position:relative; top:130px">
         <%= form_for @post, :html => {:multipart => true, "data-ajax" => false}  do |f| %>
-          <%= f.label :title %>
-          <%= f.text_field :title %><br />
+
         
-          <%= f.label :content %>
+          <%= f.label :내용 %>
           <%= f.text_field :content %><br />
         
           <div class="form-group">
              <input style="background-color : transparent;" type="file" name="pic" accept="image/*" >
           </div>
-          <%= f.submit %>
+          <%= f.submit "submit"%>
         <% end %>
     </div>
           
-          
-    <div data-role="footer" data-position="fixed" data-fullscreen="true">
-      <div data-role="navbar">
-        <ul>
-           <li><a href="/"  data-icon="back"></a></li>
-       </ul>
-      </div>
-    </div> 
-       
+
 
     

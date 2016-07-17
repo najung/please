@@ -2,18 +2,15 @@
 <html>
 <head>
   <title>AfterSquat</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   
   <!-- 부트스트렙-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  <!-- 제이쿼리모바일-->
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  
   <!-- 뷰포트   -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--폰트-->
@@ -27,29 +24,12 @@
 </head>
 <body>
 
-   <!--
-   <p class="notice"><%= notice %></p>
-   <p class="alert"><%= alert %></p>
-   -->
-    <% if user_signed_in?%>
-   <div align="right">
-   <a href="/users/sign_out"  data-icon="user"></a>
-   </div>
-   
-   <%else%>
-   <div align="right">
-      <span class = "icons">
-        <a href="/users/sign_up" class="icon fa fa-child" style="font-size:30px; margin-right:20px; text-decoration:none;" aria-hidden="true"></a>
-      </span>
-      <span class = "icons">
-        <a href="/users/sign_in" class="icon fa fa-sign-in" style="font-size:30px; margin-right:20px; text-decoration:none;" aria-hidden="true"></a>
-      </span>
-   </div>
-    <%end%>
 
-<div data-role="page">
+  <!--프로필-->
+
+  
 <%= yield %>
-</div>
+
 
 </body>
-</html
+</html>

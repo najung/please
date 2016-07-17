@@ -1,11 +1,6 @@
 source 'https://rubygems.org'
 
 
-
-gem 'jquery_mobile_rails'
-
-
-
 gem 'rails_12factor', group: :production
 
 

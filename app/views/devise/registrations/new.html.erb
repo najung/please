@@ -21,7 +21,7 @@
 				  </div>
 
 				  <div class="form-group">
-				  	<%= f.label :password_confirmation %>
+				  	<%= f.label :password_check %>
 				    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
 				  </div>
           
@@ -29,14 +29,7 @@
 				  	<%= f.label :username %>
 				  	<%= f.text_field :username, autofocus: true, class: "form-control" %>
 				  </div>
-				  
-				  
-				  <div class="form-group">
-				  	<%= f.label :bodyrollmodel %>
-				  	<%= f.text_field :boll_model, autofocus: true, class: "form-control" %>
-				  </div>
-        
-          
+				           
           
 				  <div class="form-group">
 				  	<%= f.submit "Sign up", class: "btn btn-primary" %>

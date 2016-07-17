@@ -17,13 +17,13 @@ $(document).ready(function() {
         "selectedIndex": 10,
         "distance": 125,
         "designedForWidth": 1920,
-        "designedForHeight": 925,
+        "designedForHeight": 1540,
         "scaleZ": 0.86,
         "distanceInFallbackMode": 250,
         "path": {
             "settings": {
-                "shiftY": 201,
-                "shiftZ": 440,
+                "shiftY": 240,
+                "shiftZ": 630,
                 "rotationAngleZY": -17,
                 "wideness": 521
             },
@@ -55,4 +55,6 @@ $(document).ready(function() {
         "popoutSelectedShiftY": -56,
         "popoutSelectedShiftZ": 155
     });
+    
 });
+
