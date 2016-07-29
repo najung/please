@@ -17,12 +17,14 @@
 <div style="position: relative; left:40px">
 
 
-<div>
+<div class="container">
     <a style="color:black" href="/<%=@post.user.username%>">
       <h4><%= @post.user.username %></h4>
     </a>        
-    <img class="show"src="<%=@post.image_url%>">
+    <img class="show" src="<%=@post.image_url%>">
+    <div class="content">
     <%= @post.content %>
+    </div>
 </div>        
 
         <hr> 
@@ -32,7 +34,7 @@
     <h4><%= @post.comments.count %> Comments</h4>  
           <% if @post.comments %>
             <% @post.comments.each do |comment| %>
-              <div class="comment">
+              <div class="comment" style="width:300px">
               <a style="color:black" href="/<%=comment.user.username%>"><%= comment.user.username %></a>: <%= comment.content %>  
               <% if comment.user == current_user %>
                   <%= link_to post_comment_path(@post, comment), method: :delete, data: { confirm: "정말 삭제하시겠습니까??" } do %>
@@ -62,3 +64,4 @@
 </div>
 <br>
 <br>
+</div>
