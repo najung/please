@@ -1,16 +1,7 @@
-<nav class=" navbar-fixed-top" style="margin-bottom:10px">
+<nav class=" navbar-fixed-top" style="margin-top:10px">
     <div class="nav">
-    <a href="/posts/new"><span style="font-size:16px; float: left; color:gray; margin: 5px 2px 5px 8px;" class="glyphicon glyphicon-pencil"></span></a>
-    <%if user_signed_in?%>
-    <a href="/<%=current_user.username%>"><span style="font-size:16px; float: left; color:gray; margin: 5px 5px;" class="glyphicon glyphicon-user" aria-hidden="true">&nbsp;</span></a>
-    <%end%>  
-      <% if user_signed_in? %>
-      <a style="color:black; float: right; margin: 2px 2px;" href="/users/sign_out">log out</a>
-      <%else%>
-      <a style="color:black; float: right; margin: 2px 2px;" href="/users/sign_in">log in</a>
-      <%end%>
+    <a href="#"><span style="font-size:26px; float: right; color:gray;" class="glyphicon glyphicon-question-sign" aria-hidden="true">&nbsp;</span></a>
     </div>
-
 </nav>
 
 
@@ -23,6 +14,7 @@
        <a href="/"style="color:black; text-decoration:none;">AfterSquat</a>
    </h1>
 </div> 
+<hr>
        
        
 <div id="pic_box">
@@ -37,4 +29,12 @@
 </div>
 
 
-
+<div id="footer">
+  <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
+  <div class="row" id="bottomNav">
+    <div class="col-xs-4 text-center"><a href="/posts/new"><i class="glyphicon glyphicon-camera"></i><br>Write</a></div>
+    <div class="col-xs-4 text-center"><a href="/<%=current_user.username%>"><i class="glyphicon glyphicon-user"></i><br>Profile</a></div>
+    <div class="col-xs-4 text-center"><a href="https://facebook.com/aftersquat"><i class="glyphicon glyphicon-thumbs-up"></i><br>Facebook</a></div>
+  </div>
+  </div>
+</div>

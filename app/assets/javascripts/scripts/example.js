@@ -13,8 +13,10 @@ $(document).ready(function() {
     }, 500);
 
     container.theta_carousel({
+        //sensitivity는 잘 모르겠음
+        "Sensitivity": 0.2,
         "filter": ".ex-item",
-        "selectedIndex": 10,
+        "selectedIndex": 0,
         "distance": 125,
         "designedForWidth": 1920,
         "designedForHeight": 1540,
@@ -30,8 +32,8 @@ $(document).ready(function() {
             "type": "parabola"
         },
         "shadow": true,
-        "shadowBlurRadius": 62,
-        "shadowSpreadRadius": 2,
+        "shadowBlurRadius": 31,
+        "shadowSpreadRadius": 0,
         "fadeAway": true,
         "fadeAwayBezierPoints": {
             "p1": {

@@ -14,6 +14,40 @@
  *= require_tree .
  */
  
+// 이미지업로드부분
+input[type="file"] {
+    position: fixed;
+    right: 100%;
+    bottom: 100%;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+
+//푸터 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#footer {
+  height: 40px;
+  
+}
+
+.row  {
+       background-color:white;
+    
+    }
+    
+    
+#bottomNav {
+	padding: 2.5px;
+}
+#bottomNav a {
+    font-size:10pt;
+}
+#bottomNav a:hover {
+}
 
 
 // 로고,폰트꾸미는부분@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -143,6 +177,10 @@ input.item {
        
         
         border-radius: 10px;
+        }
+        
+.content { width:300px;
+           word-break: break-all;
         }
 
 

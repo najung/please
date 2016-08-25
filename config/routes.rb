@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   
-  
-  
+  get '/:current_user.username' => 'posts#show'
+
+
   get ':username', to: 'profiles#show', as: :profile  
-  root 'posts#index'
   devise_for :users
   mount RailsAdmin::Engine => '/admin/najung', as: 'rails_admin'
+  root "posts#index"
   resources :posts do
     resources :comments
   end

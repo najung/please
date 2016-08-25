@@ -1,10 +1,11 @@
 class PostsController < ApplicationController
+  before_action :require_login
   before_action :authenticate_user!
   before_action :find_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  
   def index
-   
-    @posts = Post.all.reverse
+        @posts = Post.all.reverse
   end
   
     def new
@@ -14,7 +15,6 @@ class PostsController < ApplicationController
     
     def create  
       @post = current_user.posts.build(post_params)
-      
     uploader = UserUploader.new
     uploader.store!(params[:pic])
     

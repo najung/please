@@ -1,20 +1,13 @@
-  <div style="text-align:right;">
-      <% if user_signed_in? %>
-      <a style="color:black" href="/users/sign_out">log out</a>
-      <%else%>
-      <a style="color:black" href="/users/sign_in">log in</a>
-      <%end%>
-  </div>
-  
+
 <div align="center" style="margin-bottom:20px;">
-   <h1 class="logo" style="font-size:25px; font-weight:600;">
-       <a href="/" style="color:black; text-decoration:none;">AfterSquat</a>
+       <h1 class="logo" style="font-size:25px; font-weight:700; margin-top: 20px;">
+       <a href="/"style="color:black; text-decoration:none;">AfterSquat</a>
    </h1>
-</div>  
+</div> 
+       
 
 
-
-<div style="position: relative; left:40px">
+<div style="position: relative; left:30px">
 
 
 <div class="container">
@@ -34,28 +27,30 @@
     <h4><%= @post.comments.count %> Comments</h4>  
           <% if @post.comments %>
             <% @post.comments.each do |comment| %>
-              <div class="comment" style="width:300px">
+              <div class="comment">
               <a style="color:black" href="/<%=comment.user.username%>"><%= comment.user.username %></a>: <%= comment.content %>  
               <% if comment.user == current_user %>
                   <%= link_to post_comment_path(@post, comment), method: :delete, data: { confirm: "정말 삭제하시겠습니까??" } do %>
                   <span>x</span>
               <% end %>
+              </div>
             <% end%>
           <% end %>
         <% end %>
+    <div>
+        <%= form_for [@post, @post.comments.new] do |f| %>
+          <% if user_signed_in? %>
+            <%= f.text_field :content, placeholder: 'Add Comments...' %>
+          <%else%>
+            <a href="/users/sign_in">댓글을 쓰려면 로그인하세요</a>
+          <%end%>
+          <%= f.submit %>
+        <% end %>
+    </div>       
 </div>
-<div>
-    <%= form_for [@post, @post.comments.new] do |f| %>
-      <% if user_signed_in? %>
-        <%= f.text_field :content, placeholder: 'Add Comments...' %>
-      <%else%>
-        <a href="/users/sign_in">댓글을 쓰려면 로그인하세요</a>
-      <%end%>
-      <%= f.submit %>
-    <% end %>
-</div>       
-</div>
+
 <br>
+
 <div style="text-align:right; position:relative; right:50px;">        
   <% if @post.user == current_user %>
   <%= link_to 'Edit', edit_post_path %>
@@ -64,4 +59,17 @@
 </div>
 <br>
 <br>
+
+</div>
+
+
+
+<div id="footer">
+  <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
+  <div class="row" id="bottomNav">
+    <div class="col-xs-4 text-center"><a href="/posts/new"><i class="glyphicon glyphicon-camera"></i><br>Write</a></div>
+    <div class="col-xs-4 text-center"><a href="/<%=current_user.username%>"><i class="glyphicon glyphicon-user"></i><br>Profile</a></div>
+    <div class="col-xs-4 text-center"><a href="https://facebook.com/aftersquat"><i class="glyphicon glyphicon-thumbs-up"></i><br>Facebook</a></div>
+  </div>
+  </div>
 </div>

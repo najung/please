@@ -1,45 +1,58 @@
-<div class="login" style="width:80%; margin:30px auto 0;">
-    
-<div class="col-md-8 col-md-offset-2">
-  <div class="row">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h2>Sign up</h2>
-      </div>
-      <div class="panel-body">
-      	<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-				  <%= devise_error_messages! %>
+<div align="center" style="margin-bottom:20px;">
+       <h1 class="logo" style="font-size:25px; font-weight:700; margin-top: 20px;">
+       <a href="#"style="color:black; text-decoration:none;">AfterSquat</a>
+   </h1>
+</div> 
 
-				  <div class="form-group">
-				  	<%= f.label :email %>
-				  	<%= f.email_field :email, autofocus: true, class: "form-control" %>
-				  </div>
-
-				  <div class="form-group">
-				  	<%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %>
-				    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-				  </div>
-
-				  <div class="form-group">
-				  	<%= f.label :password_check %>
-				    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
-				  </div>
-          
-          <div class="form-group">
-				  	<%= f.label :username %>
-				  	<%= f.text_field :username, autofocus: true, class: "form-control" %>
-				  </div>
-				           
-          
-				  <div class="form-group">
-				  	<%= f.submit "Sign up", class: "btn btn-primary" %>
-				  </div>
-				<% end %>
-
-				<%= render "devise/shared/links" %>
-      </div>
+<!-- 호날두 -->
+<p style="text-align:center">
+	<img style="width:80%; border-radius:8px" src="/assets/1222.jpg">
+</p>
+<!-- 끝 -->
+<div class="login" style="width:80%; margin:30px auto 0;">    
+	<div class="col-md-8 col-md-offset-2">
+		<div class="row">
+			<div class="panel panel-default">
+			     <div class="panel-body">
+			      	<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+							  <%= devise_error_messages! %>
+			
+							  <div class="form-group">
+							  	<%= f.email_field :email, placeholder: "이메일", autofocus: true, class: "form-control" %>
+							  </div>
+			
+							  <div class="form-group">
+							    <%= f.password_field :password, placeholder: "비밀번호", autocomplete: "off", class: "form-control" %>
+							  </div>
+							  
+							<!--비밀번호체크
+							  <div class="form-group">
+							  	<% f.label :password_check %>
+							    <% f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+							  </div>
+			          		-->
+			          		
+			          <div class="form-group">
+							  	<%= f.text_field :username, placeholder: "사용자 이름", autofocus: true, class: "form-control" %>
+				   	  </div>
+							  <div class="form-group">
+							  	<%= f.submit "가입하기", class: "btn-sm btn-primary btn-block" %>
+							  </div>
+							<% end %>		
+			     </div>
+			</div>
+					<div style="text-align: center;">
+					계정이 있으신가요?<%= render "devise/shared/links" %>
+					</div>
 		</div>
 	</div>
 </div>
 
-</div>
+<br>
+<br>
+<br>
+<br>
+
+<nav style="text-align:center;font-size:3px; color:gray;">
+<p>© 2016 AFTERSQUAT</p>
+</nav>

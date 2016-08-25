@@ -14,20 +14,28 @@
        
        
        
-    <div align="center" style="position:relative; top:130px">
+    <div align="center" style="position:relative; top:100px">
         <%= form_for @post, :html => {:multipart => true, "data-ajax" => false}  do |f| %>
 
+ <label for="file-upload" class="custom-file-upload">
+            IMAGE UPLOAD
+        </label>
+        <span id="file-selected"></span>
+        <input id="file-upload" type="file" name="pic" accept="image/*" >        
+          <br><br>        
+          <% f.label :내용 %>  
+          <%= f.text_area :content, size: "40x8", placeholder: "몸과 웨이트 무게를 기록하세요 :D" %><br />
         
-          <%= f.label :내용 %>
-          <%= f.text_field :content %><br />
-        
-          <div class="form-group">
-             <input style="background-color : transparent;" type="file" name="pic" accept="image/*" >
-          </div>
-          <%= f.submit "submit"%>
+
+        <br><br>
+       
+          <%= f.submit "submit",class: "btn-primary btn-sm btn-block"%>
         <% end %>
     </div>
           
+<script>
+$('#file-upload').bind('change', function() { var fileName = ''; fileName = $(this).val(); $('#file-selected').html(fileName); }) 
+</script>          
 
 
     
